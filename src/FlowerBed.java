@@ -1,5 +1,6 @@
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import java.util.List;
 import java.util.LinkedList;
@@ -20,13 +21,28 @@ public class FlowerBed implements GardenComponent {
     rect.setY(position.getY());
     rect.setWidth(100);
     rect.setHeight(100);
-    rect.setStroke(Color.BLACK);
-    rect.setStrokeWidth(1);
-    rect.setFill(null);
+    rect.setStroke(color);
+    rect.setStrokeWidth(2);
+    rect.setFill(color);
   }
 
   public Rectangle getRect() {
     return rect;
+  }
+  
+  public void add(GardenComponent gc) {
+	  components.add(gc);
+  }
+  
+  public void remove(GardenComponent gc) {
+	  if(components.contains(gc)) {
+		  components.remove(gc);
+	  }
+  }
+  
+  public boolean containsCircle(Circle circle) {
+	  Point2D circleCenter = new Point2D(circle.getCenterX(), circle.getCenterY());
+	  return rect.contains(circleCenter);
   }
 
   public void move(double deltaX, double deltaY) {
