@@ -17,7 +17,7 @@ public class Flower implements GardenComponent {
       circle.setCenterY(position.getY());
       circle.setRadius(10);
       circle.setFill(color);
-      circle.setStroke(Color.BLACK);
+      circle.setStroke(color);
       circle.setStrokeWidth(1);
   }
 
