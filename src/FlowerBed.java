@@ -31,6 +31,7 @@ public class FlowerBed implements GardenComponent {
   }
   
   public void add(GardenComponent gc) {
+	  if(components.contains(gc)) return;
 	  components.add(gc);
   }
   

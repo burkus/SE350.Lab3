@@ -6,8 +6,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
 import javafx.geometry.Point2D;
-import java.util.List;
-import java.util.LinkedList;
 
 public class GardenLayout extends Application {
   Flower flower = new Flower(new Point2D(250, 250), Color.RED, true);
@@ -46,10 +44,7 @@ public class GardenLayout extends Application {
   
   EventHandler<MouseEvent> releaseHandler = new EventHandler<MouseEvent>() {
 	  public void handle(MouseEvent e) {
-		  Point2D clickReleasedPoint = new Point2D(e.getX(), e.getY());
 		  System.out.println("Click Released at: " + e.getX() + ", " + e.getY());
-		  Point2D circleCenterPoint = new Point2D(flower.getCircle().getCenterX(),
-				  								  flower.getCircle().getCenterY());
 		  
 		  if(flowerBed.containsCircle(flower.getCircle())) {
 			  if(circleHasBeenDragged) {
